@@ -1,0 +1,48 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <big style="float:center;">
+    <h1 style="text-align: center; font-family: cursive;">
+      <nav id="nav-main" style="background-color: #41051F">
+        <p style ="color: #FFFFFF;">Mes Services</p>
+      </nav>
+    </h1>
+      <div style="text-align:center;">
+        <a href={{path('carte')}}>
+          <img src="{{asset('bundles/framework/images/BarberShop-2.png')}}" class="img-circle" alt="BarberShop" width="400" height="400" style="">
+         </a>
+         <a href={{path('carte')}}>
+           <img src="{{asset('bundles/framework/images/protheses.jpg')}}" class="img-circle" alt="BarberShop" width="400" height="400" style="">
+         </a>
+         <a href={{path('carte')}}>
+           <img src="{{asset('bundles/framework/images/photo.jpg')}}" class="img-circle" alt="BarberShop" width="400" height="400" style="">
+         </a>
+         
+         <h2 style="text-align: left;">
+         <a href="#" class="myButton"><strong>BARBER SHOP</strong></a>
+          
+         </h2>
+         <h2 style="text-align: center;">
+          <a href="#" class="myButton"><strong>PROTHESES CAPILLAIRE</strong></a>        
+
+         </h2>
+         <h2 style="text-align: right;">
+           <a href="#" class="myButton"><strong>LISSAGE BRESILIEN</strong></a>
+         </h2>
+      </div>
+      <h1 style="text-align: center; font-family: cursive;">
+        <nav id="nav-main" style="background-color: #41051F">
+          <p style ="color: #FFFFFF;">Actualités</p>
+        </nav>
+      </h1>
+      </br></br>
+  </big> 
+</body>
+</html>
+
+{% endblock %}

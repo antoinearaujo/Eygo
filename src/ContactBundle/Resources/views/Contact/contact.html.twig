@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+<h1 style="text-align: center; font-family: cursive;">
+  <nav id="nav-main" style="background-color: #41051F">
+    <p style ="color: #FFFFFF;">Contact</p>
+  </nav>
+</h1>
+
+<nav id="nav-mai" style="background-color: #FFFFF2">
+  <h1 style="text-align: left; font-family: cursive;">
+    Me Contacter:
+  </h1>
+  <h2 style="text-align:right; font-family: cursive;">
+    <hr>
+    Informations 
+  </h2>
+
+  <h3 style="text-align: center;">
+    <strong>
+      Adresse:
+    </strong>
+     45 Rue Emile Reymond,</br> 42610 </br>Saint-Romain-le-Puy
+  </h3>
+  <hr>
+  <h2 style="text-align:right; font-family: cursive;">
+    Réseaux Sociaux 
+  </h2>
+  <h3 style="text-align: center;">
+    Par facebook : 
+    <a href="https://www.facebook.com/EygoAttitude/?fref=ts" >
+      <img src="{{asset('bundles/framework/images/Fbout.png')}}">
+    </a>
+  </h3>
+
+
+</nav>
+
+
+{% endblock %}

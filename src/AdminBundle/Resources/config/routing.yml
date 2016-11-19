@@ -1,0 +1,3 @@
+admin:
+    path:     /article
+    defaults: { _controller: AdminBundle:Article:ajout }

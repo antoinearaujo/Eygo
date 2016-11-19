@@ -1,0 +1,3 @@
+horaire:
+    path:     /horaires
+    defaults: { _controller: HoraireBundle:Horaire:horaire }
