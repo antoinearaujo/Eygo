@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticleRepository extends EntityRepository
 {
-	public function getAll()
+		public function getAll()
 	{
 		$qb = $this->createQueryBuilder('s');
 

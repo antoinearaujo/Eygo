@@ -13,7 +13,11 @@ use AdminBundle\Form\ImageType;
 
 class ArticleController extends Controller
 {
-   public function ajoutAction(Request $request)
+   
+
+
+
+     public function ajoutAction(Request $request)
     {
 
       $form = $this->createFormBuilder(new Article())
@@ -31,7 +35,7 @@ class ArticleController extends Controller
             $em-> persist($form->getData());
             $em->flush();
 
-            return $this->redirect($this->generateUrl('home'));
+            return $this->redirect($this->generateUrl('home_homepage'));
         }
       return $this->render('AdminBundle:Article:ajout.html.twig', array('form' => $form->createView()));
     }

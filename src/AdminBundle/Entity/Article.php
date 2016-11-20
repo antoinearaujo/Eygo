@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Article
  *
  * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="ArticleBundle\Repository\ArticleRepository")
+ * @ORM\Entity(repositoryClass="AdminBundle\Repository\ArticleRepository")
  */
 class Article
 {
@@ -18,6 +18,7 @@ class Article
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
      */
     protected $id;
 

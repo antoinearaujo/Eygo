@@ -38,6 +38,22 @@
       <h1 style="text-align: center; font-family: cursive;">
         <nav id="nav-main" style="background-color: #41051F">
           <p style ="color: #FFFFFF;">Actualités</p>
+
+            {% for sheet in sheets %}
+              <div class="well">
+                <p style="text-align:center;"><strong><h3 class="btn-default">{{sheet.name}}</h3></strong></p>
+                  <img class="img-responsive center-block"
+
+                    src="{{ asset(sheet.image.webPath) }}"
+                    alt="{{ sheet.image.alt }}"
+                 />
+                 <div class="alert col-lg-12 alert-info"><legend style="text-align:center;">
+                   <h4 style="text-align:center;">{{sheet.message}}</h4>
+                 </div>
+                 </br>
+                 </br>
+              </div>
+            {% endfor %}
         </nav>
       </h1>
       </br></br>

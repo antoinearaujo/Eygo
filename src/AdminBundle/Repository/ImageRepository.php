@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class ImageRepository extends EntityRepository
 {
-	public function getAll()
+		public function getAll()
 	{
 		$qb = $this->createQueryBuilder('s');
 
