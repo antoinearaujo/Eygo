@@ -49,6 +49,12 @@
                  />
                  <div class="alert col-lg-12 alert-info"><legend style="text-align:center;">
                    <h4 style="text-align:center;">{{sheet.message}}</h4>
+
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+            <li> <a href="{{ path('admin_delete_article', {'id': sheet.id }) }}">Supprimer</a> </li>
+
+        {%endif%}
+
                  </div>
                  </br>
                  </br>

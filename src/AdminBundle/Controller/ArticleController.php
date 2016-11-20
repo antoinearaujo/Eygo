@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use AdminBundle\Entity\Article;
+use AdminBundle\Entity\Delete;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use AdminBundle\Form\ImageType;
 
@@ -39,4 +40,36 @@ class ArticleController extends Controller
         }
       return $this->render('AdminBundle:Article:ajout.html.twig', array('form' => $form->createView()));
     }
+
+
+ public function deleteArticleAction($id, Request $request)
+    {
+      $form = $this->createFormBuilder(new Delete())
+           ->add('Name')
+           ->add('raison')
+           ->add('submit','submit')
+           ->getForm();
+
+        $form->handleRequest($request);
+     
+
+
+
+        if ($request->isMethod('post')&& $form->isValid()){
+
+         $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('AdminBundle:Article')->find($id);
+ 
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Comment entity.');
+            }
+ 
+            $em->remove($entity);
+            $em->flush();
+
+          
+        }
+         return $this->render('AdminBundle:Article:deleteArticle.html.twig', array('form' => $form->createView()));
+    }
+
 }
