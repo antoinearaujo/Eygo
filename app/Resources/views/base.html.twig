@@ -22,19 +22,18 @@
 
     <title>Eygo Coiffeur</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!--Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('js/bootstrap.min.js')}}" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="{{ asset('css/styles.css')}}" rel="stylesheet" type="text/css">
+    <!--Custom Fonts -->
+
     <link href="{{ asset('bundles/js/jquery.min.js') }}" rel="stylesheet" type="text/js">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-    <!-- Theme CSS -->
-    <link href="{{asset('/css/styles.css')}}" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -56,12 +55,30 @@
         <li><a href="{{path('carte')}}">CARTE</a></li>
         <li><a href="{{path('horaire')}}">HORAIRES</a></li>
         <li><a href="{{path('contact')}}">CONTACT</a></li>
-        <li><a href="https://www.facebook.com/EygoAttitude/?fref=ts" ><img src="{{asset('bundles/framework/images/Fbout2.png')}}"> </a></li>
+        <li><a href="https://www.facebook.com/EygoAttitude/?fref=ts" ><img src="{{asset('bundles/framework/images/fb.png')}}"> </a></li>
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <li><a href="{{ path('admin_article')}}"><img src="{{asset('bundles/framework/images/add.png')}}"></a></li>
+        {% else %}       
+        <li style="text-align: right;"><a href="{{ path('fos_user_security_login')}}"><img src="{{asset('bundles/framework/images/admin.png')}}"> </a></li>
+        {% endif %}
     </ul>
 </nav>
 </nav>
 <div id="nav-trigger">
-    <span>Menu</span>
+    <span>
+    <ul>
+        <a href="{{path('home_homepage')}}">ACCUEIL</a></br></br>
+        <a href="{{path('carte')}}">CARTE</a></br></br>
+        <a href="{{path('horaire')}}">HORAIRES</a></br></br>
+        <a href="{{path('contact')}}">CONTACT</a>
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <a href="{{ path('admin_article')}}"><img src="{{asset('bundles/framework/images/add.png')}}"></a>
+        {% else %}       
+        <a href="{{ path('fos_user_security_login')}}"><img src="{{asset('bundles/framework/images/admin.png')}}"> </a>
+        {% endif %}
+    </ul></span>
+
+
 </div>
 <nav id="nav-mobile"></nav>
         {% block javascripts %}{% endblock %}
