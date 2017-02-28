@@ -1,1 +1,38 @@
-testee
+{% extends "::base.html.twig" %}
+
+
+
+{% block body %}
+
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+
+<h1 style="text-align: center; font-family: cursive;">
+      <nav id="nav-main" style="background-color: #41051F">
+        <p style ="color: #FFFFFF;">DASHBOARD ADMIN</p>
+      </nav>
+    </h1>	
+
+ </br>
+ </br>
+ </br>
+
+<div class="form-align">
+	<div class="form-container">
+		<nav id="nav-main" style="background-color: #8A051F">
+			<a href="{{path('admin_article_no_img')}}">Poster un article</a>
+		</nav>
+		<nav id="nav-main" style="background-color: #8A051F">
+			<a href="{{path('admin_article')}}">Poster un article avec une image</a>
+		</nav>		
+		<nav id="nav-main" style="background-color: #8A051F">
+			<a href="{{path('fos_user_security_logout')}}">Déconnexion</a>
+		</nav>
+	</div>
+</div>
+{% else %}
+
+
+<h1>Vous n'êtes pas administrateur</h1>
+
+{%endif%}
+{% endblock %}
