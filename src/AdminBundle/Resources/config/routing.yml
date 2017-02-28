@@ -1,8 +1,16 @@
 admin_article:
     path:     /article
     defaults: { _controller: AdminBundle:Article:ajout }
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: AdminBundle:HomePage:admin }
 admin_delete_article:
     pattern:  /article/{id}
     defaults: { _controller: AdminBundle:Article:deleteArticle }
-
+admin_article_no_img:
+    path:     /article-sans-image
+    defaults: { _controller: AdminBundle:ArticleNoImg:ajout }
+admin_delete_article_no_img:
+    pattern:  /article-sans-image/{id}
+    defaults: { _controller: AdminBundle:ArticleNoImg:delete }
 

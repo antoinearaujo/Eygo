@@ -108,14 +108,9 @@ class Image
 
   {
 
-    // Si jamais il n'y a pas de fichier (champ facultatif)
-
+ // Si jamais il n'y a pas de fichier (champ facultatif)
     if (null === $this->file) {
-
-      return;
-
     }
-
     // Si on avait un ancien fichier, on le supprime
 
     if (null !== $this->tempFilename) {

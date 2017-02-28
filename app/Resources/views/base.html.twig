@@ -57,7 +57,7 @@
         <li><a href="{{path('contact')}}">CONTACT</a></li>
         <li><a href="https://www.facebook.com/EygoAttitude/?fref=ts" ><img src="{{asset('bundles/framework/images/fb.png')}}"> </a></li>
         {% if is_granted('ROLE_SUPER_ADMIN') %}
-        <li><a href="{{ path('admin_article')}}"><img src="{{asset('bundles/framework/images/add.png')}}"></a></li>
+        <li><a href="{{ path('admin_homepage')}}"><img src="{{asset('bundles/framework/images/admin.png')}}"></a></li>
         {% else %}       
         <li style="text-align: right;"><a href="{{ path('fos_user_security_login')}}"><img src="{{asset('bundles/framework/images/admin.png')}}"> </a></li>
         {% endif %}
