@@ -40,7 +40,7 @@
           <p style ="color: #FFFFFF;">Actualités
             <div style="text-align: right;">
             {% if is_granted('ROLE_SUPER_ADMIN') %}
-              <a href="{{ path('admin_article')}}"><h5>Ajouter une news</h5></a>
+              <a href="{{ path('admin_homepage')}}"><h5>Ajouter une news</h5></a>
             {% endif %}
             </div>
           </p>
@@ -58,6 +58,25 @@
 
 {% if is_granted('ROLE_SUPER_ADMIN') %}
             <li> <a href="{{ path('admin_delete_article', {'id': sheet.id }) }}">Supprimer</a> </li>
+
+        {%endif%}
+
+                 </div>
+                 </br>
+                 </br>
+              </div>
+            {% endfor %}
+
+
+
+             {% for sheetnoimg in sheetnoimgs %}
+              <div class="well">
+                <p style="text-align:center;"><strong><h3 class="btn-default">{{sheetnoimg.name}}</h3></strong></p>
+                 <div class="alert col-lg-12 alert-info"><legend style="text-align:center;">
+                   <h4 style="text-align:center;" class="img-responsive center-block">{{sheetnoimg.message}}</h4>
+
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+             <li> <a href="{{ path('admin_delete_article_no_img', {'id': sheetnoimg.id }) }}">Supprimer</a> </li>
 
         {%endif%}
 

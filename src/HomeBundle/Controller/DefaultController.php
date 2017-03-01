@@ -19,17 +19,13 @@ class DefaultController extends Controller
 
         $sheets = $repository->getAll();
 
-   return $this->render('HomeBundle:Default:index.html.twig', array('sheets' => $sheets) );
+        $em2 = $this->getDoctrine()->getManager();
+        $repository2 = $em2->getRepository('AdminBundle:ArticleNoImg');
 
-    }
+        $sheetnoimgs = $repository2->getAll();
+        
 
-	public function indextwoAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('AdminBundle:ArticleNoImg');
-
-        $sheetnoimgs = $repository->getAll();
-         return $this->render('HomeBundle:Default:index.html.twig', array('sheetnoimgs' => $sheetnoimgs) );
+   return $this->render('HomeBundle:Default:index.html.twig', array('sheets' => $sheets,'sheetnoimgs' => $sheetnoimgs) );
 
     }
 

@@ -5,7 +5,7 @@
    width:300px; /* A toi de donner la bonne largeur */
    height:200px; /* A toi de donner la bonne hauteur */
    margin-left:-150px; /* -largeur/2 */
-   margin-top:120px; /* -hauteur/2 */
+   margin-top:140px; /* -hauteur/2 */
 }
 .form-container {
    border: 1px solid #000000;
@@ -87,7 +87,7 @@
 body {
 
 
-background-image: url('/images/Back.png');
+background-image: url('/images/Font.jpg');
 background-attachment: fixed;
 }
 

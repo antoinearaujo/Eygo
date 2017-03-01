@@ -6,38 +6,22 @@
 
 {% if is_granted('ROLE_SUPER_ADMIN') %}
 
-<div class="row">
-        <section class="col-sm-3">
-        
-          
-       
-        </section>
-        <section class="col-sm-9">
+<h1 style="text-align: center;">Remplissez ce mini formulaire afin d'ajouter un article</h1>
+<div class="form-align">
+	<div class="form-container">
 
-        
+		{{ form_start(form)}}
+		{{ form_label(form.Name) }} {{ form_widget(form.Name) }}
+		{{ form_rest(form)}}
 
-
-
-<div class="row">
-        <section class="col-sm-3">
-      
-
-{{ form_start(form)}}
-{{ form_label(form.Name) }} {{ form_widget(form.Name) }}
-{{ form_rest(form)}}
- 
-
-
-
-</section>
+	</div>
 </div>
 
 
 
 
-{% endif %}
 
-{% if not is_granted ('ROLE_SUPER_ADMIN')%}
+{% else %}
 
 <h1>Vous n'êtes pas administrateur</h1>
 

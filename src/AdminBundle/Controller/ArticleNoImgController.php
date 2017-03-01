@@ -65,6 +65,8 @@ class ArticleNoImgController extends Controller
             $em->remove($entity);
             $em->flush();
 
+            return $this->redirect($this->generateUrl('home_homepage'));
+
           
         }
          return $this->render('AdminBundle:ArticleNoImg:delete.html.twig', array('form' => $form->createView()));

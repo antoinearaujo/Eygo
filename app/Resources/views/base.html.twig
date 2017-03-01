@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="UTF-8" />
-        <title>{% block title %}Bienvenue!{% endblock %}</title>
+        <title>{% block title %}Eygo Coiffure{% endblock %}</title>
         {% block stylesheets %}
 
         <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
@@ -41,7 +41,7 @@
     <![endif]-->
 
     </head>
-    <body style="background-image: url('/images/Back.png');">
+    <body style="background-image: url('{{ asset('images/Font.jpg') }}');">
       
        <h1> {% block pageTitle %}{% endblock %}</h1>
 
