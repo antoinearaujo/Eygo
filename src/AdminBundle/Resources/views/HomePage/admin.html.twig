@@ -7,9 +7,7 @@
 {% if is_granted('ROLE_SUPER_ADMIN') %}
 
 <h1 style="text-align: center; font-family: cursive;">
-      <nav id="nav-main" style="background-color: #41051F">
-        <p style ="color: #FFFFFF;">DASHBOARD ADMIN</p>
-      </nav>
+        <p style ="color: #F00000;">DASHBOARD ADMIN</p>
     </h1>	
 
  </br>
@@ -18,18 +16,10 @@
 
 <div class="form-align">
 	<div class="form-container">
-		<nav id="nav-main" style="background-color: #8A051F">
-			<a href="{{path('admin_article_no_img')}}">Poster un article</a>
-		</nav>
-		<nav id="nav-main" style="background-color: #8A051F">
-			<a href="{{path('admin_article')}}">Poster un article avec une image</a>
-		</nav>
-		<nav id="nav-main" style="background-color: #8A051F">
-			<a href="{{path('fos_user_change_password')}}">Changer mon mot de passe</a>
-		</nav>			
-		<nav id="nav-main" style="background-color: #8A051F">
-			<a href="{{path('fos_user_security_logout')}}">Déconnexion</a>
-		</nav>
+			<a href="{{path('admin_article_no_img')}}" class="myButton">Poster un article</a>
+			<a href="{{path('admin_article')}}" class="myButton">Poster un article avec une image</a>
+			<a href="{{path('fos_user_change_password')}}" class="myButton">Changer mon mot de passe</a>		
+			<a href="{{path('fos_user_security_logout')}}" class="myButton">Déconnexion</a>
 	</div>
 </div>
 {% else %}
