@@ -1,1 +1,45 @@
 {% extends "::base.html.twig" %}
+
+{% block body%}
+<div class="datagrid">
+	<table>
+		<thead>
+			<tr>
+				<th>Jour</th>
+				<th>Horaires</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Lundi</td>
+				<td>Fermé</td>
+			</tr>
+			<tr class="alt">
+				<td>Mardi</td>
+				<td>Fermé</td>
+			</tr>
+			<tr>
+				<td>Mercredi</td>
+				<td>8h30-19h00</td>
+			</tr>
+			<tr class="alt">
+				<td>Jeudi</td>
+				<td>8h30-19h00</td>
+			</tr>
+			<tr>
+				<td>Vendredi</td>
+				<td>8h30-19h00</td>
+			</tr>
+			<tr class="alt">
+				<td>Samedi</td>
+				<td>8h00-17h00</td>
+			</tr>
+			<tr>
+				<td>Dimanche</td>
+				<td>Fermé</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}
